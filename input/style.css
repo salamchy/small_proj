@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+}
+
+.input-container {
+  position: relative;
+  width: 300px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  padding-top: 18px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007BFF;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background: #f0f0f0;
+  color: black;
+  padding: 0 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+input:focus + label {
+  top: 0;
+  font-size: 20px;
+  color: #007BFF;
+  transform: translateY(-50%);
+}
