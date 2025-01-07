@@ -1,0 +1,78 @@
+/* General reset */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #0f2027; /* Fallback for older browsers */
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  color: #fff;
+  overflow: hidden;
+}
+
+.text-container {
+  perspective: 1000px;
+}
+
+.animated-text {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  text-shadow: 
+    -1px -1px 0 #ff512f, 
+    1px -1px 0 #dd2476, 
+    1px 1px 0 #ff512f, 
+    -1px 1px 0 #dd2476;
+  animation: rotateText 5s infinite ease-in-out;
+}
+
+/* 3D Rotation Animation */
+@keyframes rotateText {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+    text-shadow: 
+      -1px -1px 0 #ff512f, 
+      1px -1px 0 #dd2476, 
+      1px 1px 0 #ff512f, 
+      -1px 1px 0 #dd2476;
+  }
+  25% {
+    transform: rotateX(20deg) rotateY(20deg);
+    text-shadow: 
+      -3px -3px 10px #ff512f, 
+      3px -3px 10px #dd2476, 
+      3px 3px 10px #ff512f, 
+      -3px 3px 10px #dd2476;
+  }
+  50% {
+    transform: rotateX(-20deg) rotateY(-20deg);
+    text-shadow: 
+      -5px -5px 20px #ff512f, 
+      5px -5px 20px #dd2476, 
+      5px 5px 20px #ff512f, 
+      -5px 5px 20px #dd2476;
+  }
+  75% {
+    transform: rotateX(20deg) rotateY(-20deg);
+    text-shadow: 
+      -3px -3px 10px #ff512f, 
+      3px -3px 10px #dd2476, 
+      3px 3px 10px #ff512f, 
+      -3px 3px 10px #dd2476;
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+    text-shadow: 
+      -1px -1px 0 #ff512f, 
+      1px -1px 0 #dd2476, 
+      1px 1px 0 #ff512f, 
+      -1px 1px 0 #dd2476;
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inverted Radius Border Card with Hover Animation</title>
+    <style>
+      /* General Reset */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      /* Card Container */
+      .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background-color: #fff;
+        border: 2px solid #2c5364;
+        border-radius: 20px; /* Initial border radius */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid #fff; /* Inverted border color */
+        border-radius: 20px; /* Match the initial border radius */
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Hover Effect */
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 0px; /* Inverted border-radius on hover */
+      }
+
+      .card:hover::before {
+        opacity: 1;
+        border-radius: 0px; /* Inverted border-radius on hover */
+      }
+
+      /* Card Content */
+      .card-content {
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card-content h2 {
+        font-size: 1.8rem;
+        color: #2c5364;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+      }
+
+      .card-content p {
+        font-size: 1rem;
+        color: #777;
+        transition: color 0.3s ease;
+      }
+
+      /* Hover Color Change */
+      .card:hover .card-content h2 {
+        color: #ff512f; /* Change title color on hover */
+      }
+
+      .card:hover .card-content p {
+        color: #ff2476; /* Change paragraph color on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-content">
+        <h2>Inverted Radius Card</h2>
+        <p>
+          Hover over the card to see the border-radius inversion and color
+          animations.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
